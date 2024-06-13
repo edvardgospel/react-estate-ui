@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './navbar.scss';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [open, setOpen] = useState(false);
@@ -9,28 +10,28 @@ function Navbar() {
     return (
         <nav>
             <div className="left">
-                <a href='/' className='logo'>
+                <Link to='/' className='logo'>
                     <img src="/logo.png" alt="" />
                     <span>LamaEstate</span>
-                </a>
-                <a href='/'>Home</a>
-                <a href='/'>About</a>
-                <a href='/'>Contact</a>
-                <a href='/'>Others</a>
+                </Link>
+                <Link to='/'>Home</Link>
+                <Link to='/'>About</Link>
+                <Link to='/'>Contact</Link>
+                <Link to='/'>Others</Link>
             </div>
             <div className="right">
-                <a href='/'>Sign in</a>
-                <a href='/' className='register'>Sign up</a>
+                <Link to='/'>Sign in</Link>
+                <Link to='/' className='register'>Sign up</Link>
                 <div className="menuIcon">
                     <img src="/menu.png" alt="" onClick={() => setOpen(!open)} />
                 </div>
-                <div className={open ?  "menu active" : "menu"}>
-                    <a href='/'>Home</a>
-                    <a href='/'>About</a>
-                    <a href='/'>Contact</a>
-                    <a href='/'>Others</a>
-                    <a href='/'>Sign in</a>
-                    <a href='/' >Sign up</a>
+                <div className={open ? "menu active" : "menu"}>
+                    <Link to='/'>About</Link>
+                    <Link to='/'>Home</Link>
+                    <Link to='/'>Contact</Link>
+                    <Link to='/'>Others</Link>
+                    <Link to='/'>Sign in</Link>
+                    <Link to='/' >Sign up</Link>
                 </div>
             </div>
         </nav>
